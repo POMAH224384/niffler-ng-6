@@ -10,7 +10,6 @@ import guru.qa.niffler.data.entity.spend.SpendEntity;
 import guru.qa.niffler.data.tpl.JdbcTransactionTemplate;
 import guru.qa.niffler.model.SpendJson;
 
-import static guru.qa.niffler.data.Databases.transaction;
 
 public class SpendDbClient {
 

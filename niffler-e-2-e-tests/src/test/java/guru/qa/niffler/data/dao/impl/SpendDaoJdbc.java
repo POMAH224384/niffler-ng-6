@@ -4,11 +4,7 @@ import guru.qa.niffler.config.Config;
 import guru.qa.niffler.data.dao.SpendDao;
 import guru.qa.niffler.data.entity.spend.SpendEntity;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.UUID;
 
 import static guru.qa.niffler.data.tpl.Connections.holder;
@@ -25,7 +21,7 @@ public class SpendDaoJdbc implements SpendDao {
                 Statement.RETURN_GENERATED_KEYS
         )) {
             ps.setString(1, spend.getUsername());
-            ps.setDate(2, spend.getSpendDate());
+            ps.setDate(2, new Date(spend.getSpendDate().getTime()));
             ps.setString(3, spend.getCurrency().name());
             ps.setDouble(4, spend.getAmount());
             ps.setString(5, spend.getDescription());
