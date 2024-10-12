@@ -16,7 +16,7 @@ public class ProfileTest {
   private static final Config CFG = Config.getInstance();
 
   @User(
-      username = "duck",
+      username = "roman",
       categories = @Category(
           archived = true
       )
@@ -24,7 +24,7 @@ public class ProfileTest {
   @Test
   void archivedCategoryShouldPresentInCategoriesList(CategoryJson category) {
     Selenide.open(CFG.frontUrl(), LoginPage.class)
-        .successLogin("duck", "12345")
+        .successLogin("roman", "12345")
         .checkThatPageLoaded();
 
     Selenide.open(CFG.frontUrl() + "profile", ProfilePage.class)
@@ -40,7 +40,7 @@ public class ProfileTest {
   @Test
   void activeCategoryShouldPresentInCategoriesList(CategoryJson category) {
     Selenide.open(CFG.frontUrl(), LoginPage.class)
-        .successLogin("duck", "12345")
+        .successLogin("roman", "12345")
         .checkThatPageLoaded();
 
     Selenide.open(CFG.frontUrl() + "profile", ProfilePage.class)

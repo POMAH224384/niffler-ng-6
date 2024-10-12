@@ -27,7 +27,7 @@ public class RegistrationTest {
 
   @Test
   void shouldNotRegisterUserWithExistingUsername() {
-    String existingUsername = "duck";
+    String existingUsername = "roman";
     String password = "12345";
 
     LoginPage loginPage = Selenide.open(CFG.frontUrl(), LoginPage.class);

@@ -28,7 +28,7 @@ public class SpendingWebTest {
     final String newDescription = "Обучение Niffler Next Generation";
 
     Selenide.open(CFG.frontUrl(), LoginPage.class)
-        .successLogin("duck", "12345")
+        .successLogin("roman", "12345")
         .editSpending(spend.description())
         .setNewSpendingDescription(newDescription)
         .save();
